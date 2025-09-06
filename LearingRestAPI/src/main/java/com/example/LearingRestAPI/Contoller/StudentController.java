@@ -3,6 +3,8 @@ package com.example.LearingRestAPI.Contoller;
 import com.example.LearingRestAPI.Dto.AddStudentRequestDto;
 import com.example.LearingRestAPI.Dto.StudentDto;
 import com.example.LearingRestAPI.Service.StudentService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.autoconfigure.graphql.GraphQlProperties;
@@ -18,6 +20,8 @@ import java.util.Map;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/student")
+@Tag(name = "Student API", description = "CRUD operations for students")
+
 public class StudentController {
     @GetMapping("/getStudent")
     public StudentDto getStudent(){
@@ -39,6 +43,7 @@ public class StudentController {
     private final StudentService studentService;
 
     @GetMapping("/getStudentList")
+    @Operation(summary = "Get all students", description = "Fetches a list of all students")
     public ResponseEntity<List<StudentDto>>getAllStudentList(){
         //return ResponseEntity.status(HttpStatus.OK).body(studentService.getAllStudents());
        return ResponseEntity.ok(studentService.getAllStudents());  //  ----Short hand for Ok 200
