@@ -27,7 +27,7 @@ public class GlobalExceptionalHandler {
         ErrorResponse error = new ErrorResponse(
                 LocalDateTime.now(),
                 HttpStatus.INTERNAL_SERVER_ERROR.value(),
-                "Unexpected error: " + ex.getMessage()
+                "Something went wrong: " + ex.getMessage()
         );
         return new ResponseEntity<>(error, HttpStatus.INTERNAL_SERVER_ERROR);
     }
