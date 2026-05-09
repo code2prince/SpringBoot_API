@@ -18,4 +18,6 @@ public interface StudentService {
     StudentDto updateStudent(Long id, AddStudentRequestDto addStudentRequestDto);
 
     StudentDto partialUpdateStudent(Long id, Map<String, Object> updates);
+
+    List<StudentDto> getAllActiveStudent();
 }

@@ -75,4 +75,13 @@ public class StudentImpl implements StudentService {
         Student newStudent=studentRepository.save(student);
         return modelMapper.map(newStudent,StudentDto.class);
     }
+
+    @Override
+    public List<StudentDto> getAllActiveStudent() {
+        List<Student> students =studentRepository.getAllActiveStudent();
+        return students
+                .stream()
+                .map(student -> new StudentDto(student.getId(), student.getName(), student.getEmail()))
+                .toList();
+    }
 }

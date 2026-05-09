@@ -49,6 +49,13 @@ public class StudentController {
        return ResponseEntity.ok(studentService.getAllStudents());  //  ----Short hand for Ok 200
     }
 
+
+    @GetMapping("/getAllActiveStudent")
+    @Operation(summary = "Get all students", description = "Fetches a list of all students")
+    public ResponseEntity<List<StudentDto>>getAllActiveStudent(){
+        return ResponseEntity.ok(studentService.getAllActiveStudent());  //  ----Short hand for Ok 200
+    }
+
     //-----------------------------------------------------------
 
     @GetMapping("/getStudent/{id}")
