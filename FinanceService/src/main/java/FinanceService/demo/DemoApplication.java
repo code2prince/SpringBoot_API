@@ -1,13 +1,13 @@
-package com.example.LearingRestAPI;
+package FinanceService.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class LearingRestApiApplication {
-//http://localhost:8080/API/swagger-ui/index.html
+public class DemoApplication {
+
 	public static void main(String[] args) {
-		SpringApplication.run(LearingRestApiApplication.class, args);
+		SpringApplication.run(DemoApplication.class, args);
 	}
 
 }
